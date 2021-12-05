@@ -1,0 +1,17 @@
+server:
+  port: 9000
+
+management:
+  endpoints:
+    web:
+      base-path: "/auth-server"
+      exposure:
+        include: "*"
+
+spring:
+  application:
+    name: auth-server
+  zipkin:
+    base-url: http://localhost:9411
+  config:
+    import: configserver:http://localhost:9999
